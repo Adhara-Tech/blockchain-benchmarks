@@ -1,0 +1,13 @@
+{
+  "serverPort":"9000",
+  "ethSignerEndpoint":"http://localhost:6545",
+  "rpcEndpoint1":"http://localhost:22000",
+  "rpcEndpoint2":"http://localhost:22001",
+  "rpcEndpoint3":"http://localhost:22002",
+  "rpcEndpoint4":"http://localhost:22003",
+  "eip20Address":"0x9a3DBCa554e9f6b9257aAa24010DA8377C57c17e",
+  "fromAccountAddress":"0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+  "toAccountAddress":"0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+  "timeBetweenTransactionReceiptPolls":"1000",
+  "timeToWaitForTransactionReceipt": "60000"
+}

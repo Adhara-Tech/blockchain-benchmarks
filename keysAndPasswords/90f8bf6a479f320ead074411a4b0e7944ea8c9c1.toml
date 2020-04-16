@@ -1,0 +1,8 @@
+[metadata]
+createdAt = 2019-11-05T08:15:30-05:00
+description = "File based configuration"
+
+[signing]
+type = "file-based-signer"
+key-file = "./90f8bf6a479f320ead074411a4b0e7944ea8c9c1.key"
+password-file = "./passwordFile"
