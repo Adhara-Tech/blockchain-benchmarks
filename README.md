@@ -38,8 +38,8 @@ To perform a benchmark, follow the setup for either Besu or Quorum. In order to 
 
 ### Post blockchain network setup
 
-1. Clone the Adhara-Tech blockchain-benchmarks repo, and cd into `blockchain-benchmarks` 
-2. Deploy the ERC20 contract: `cd Tokens-master`, and run `truffle migrate --network withHDWallet --reset`
+1. Clone the Adhara-Tech blockchain-benchmarks repo, and cd into `blockchain-benchmarks` and run `npm i`
+2. Deploy the ERC20 contract: `cd Tokens-master`, run `npm i` and then run `truffle migrate --network withHDWallet --reset`
 3. The contract address will be in the output, copy that value
 4. Set the eip20Address in `blockchain-benchmarks/config.json`
 5. Download and add ethsigner to PATH: `https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Get-Started/Install-Binaries/`
