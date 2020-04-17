@@ -106,7 +106,7 @@ The below table summarises the results:
 
 
 ### TODOs
-.1 Look at the memory usage of ethsigner and identify if there is a leak or does it just grab more and more memory if available.    
-.2 While testing the performance on a single system is interesting, generating the load on the same machine is not ideal. Rerunning the benchmarks where a separate machine is used to generate the load is a must.    
-.3 Inspect metrics from Besu (prometheus metrics already present) as well as Quorum (would we need to add these metrics?), specifically blocktimes etc.    
-.4 Execute the same tests for longer blocktimes.
+1. Look at the memory usage of ethsigner and identify if there is a leak or does it just grab more and more memory if available.    
+2. While testing the performance on a single system is interesting, generating the load on the same machine is not ideal. Rerunning the benchmarks where a separate machine is used to generate the load is a must.    
+3. Inspect metrics from Besu (prometheus metrics already present) as well as Quorum (would we need to add these metrics?), specifically blocktimes etc.    
+4. Execute the same tests for longer blocktimes.
