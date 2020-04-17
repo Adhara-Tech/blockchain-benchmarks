@@ -29,11 +29,11 @@ To perform a benchmark, follow the setup for either Besu or Quorum. In order to 
 
 ### Besu setup
 
-1. Clone the Adhara-Tech Besu (forked from https://github.com/PegaSysEng/besu-sample-networks) sample networks: `git clone git@github.com:Adhara-Tech/besu-sample-networks.git`
+1. Clone the Adhara-Tech Besu (forked from [PegaSysEng/besu-sample-networks](https://github.com/PegaSysEng/besu-sample-networks)) sample networks: `git clone git@github.com:Adhara-Tech/besu-sample-networks.git`
 2. cd to `besu-sample-networks` and start the sample network: `./run.sh -c ibft2`
 
 ### Quorum setup
-1. Clone the Adhara-Tech Quorum (forked from https://github.com/jpmorganchase/quorum-examples) examples: `git clone git@github.com:Adhara-Tech/quorum-examples.git`
+1. Clone the Adhara-Tech Quorum (forked from [jpmorganchase/quorum-examples](https://github.com/jpmorganchase/quorum-examples)) examples: `git clone git@github.com:Adhara-Tech/quorum-examples.git`
 2. cd to `quorum-examples` and start the example network: `PRIVATE_CONFIG=ignore docker-compose up -d`
 
 ### Post blockchain network setup
@@ -108,5 +108,5 @@ The below table summarises the results:
 ### TODOs
 .1 Look at the memory usage of ethsigner and identify if there is a leak or does it just grab more and more memory if available.    
 .2 While testing the performance on a single system is interesting, generating the load on the same machine is not ideal. Rerunning the benchmarks where a separate machine is used to generate the load is a must.    
-.3 Inspect metrics from Besu (prometheus metrics already present) as well as Quorum (would we need to add these metrics?), specifically blocktimes etc.
+.3 Inspect metrics from Besu (prometheus metrics already present) as well as Quorum (would we need to add these metrics?), specifically blocktimes etc.    
 .4 Execute the same tests for longer blocktimes.
