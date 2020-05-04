@@ -79,7 +79,7 @@ For the results presented here the number of threads were 1000 for 1s block time
 Refer to the section titled "Notes on Jmeter" for generating and opening the reports.
 
 ### Besu
-#### 1s block times
+#### 1s block times - without secp256k1-native-enabled=true
 A sample Jmeter report can be found by looking at `test_results_besu_run3.tar.xz`. Looking at the sample report, hits (requests) and codes (responses) per second graphs show somewhat erratic responses, (after excluding the 3 initial and the last samples) the responses show lows of ~114 rps and highs of ~158 rps.
 
 The below table summarises the results:    
@@ -90,6 +90,21 @@ The below table summarises the results:
 2.	Besu 1s blocktime	transfer	45085		0	0.00%	6580.03		2597	12435	7834.90		8603.00		10319.60	146.77		251.60		18.49
 3.	Besu 1s blocktime	transfer	42736		0	0.00%	6957.49		2545	13988	6960.00		7075.00		7366.99		139.95		239.94		17.63
 ```
+#### 1s block times - with secp256k1-native-enabled=true
+A sample Jmeter report can be found by looking at `test_results_besu_run9.tar.xz`. Looking at the sample report, hits (requests) and codes (responses) per second graphs show much more stable responses, (after excluding the 3 initial and the last samples) the responses show lows of ~198 rps and highs of ~208 rps.
+
+The below table summarises the results:    
+```
+				Requests	Executions			Response times (ms)								Throughput	Network (KB/sec)
+#Run 	Description		Label		#Samples	KO	Error%	Average		Min	Max	90th pct	95th pct	99th pct	Transactions/s	Received	Sent
+7. 	Besu 1s blocktime  	transfer	61181		0	0.00%	4873.61		1480	5620	5085.00		5127.00		5228.00		201.34		345.22		25.36
+8.	Besu 1s blocktime	transfer	61221		0	0.00%	4856.47		523	5695	5105.00		5168.00		5303.99 	201.59 		345.66		25.40
+9.	Besu 1s blocktime	transfer	61010		0	0.00%	4850.39		792	6125	5114.00		5169.00		5269.00		200.18		343.23		25.22
+```
+
+#### Conclusion
+
+As can be seen from comparing runs 1 to 3 with runs 7 to 9, using the `secp256k1-native-enabled=true` flag makes a big difference in both resonse time stability as well overall performance. The responses per second in run 3 had a difference of ((158-114)/114x100 = ) ~38.59%, compared to run 9 where this difference was only ((208-198)/198x100 = ) ~5%. The average throughput (of runs 1 to 3) increased from ~145 responses per second to (for runs 7 to 9) ~201 responses per second, an increase of ((201-145)/145x100 = ) ~38.62%.
 
 ### Quorum
 #### 1s block times
@@ -103,6 +118,14 @@ The below table summarises the results:
 5.	Quorum 1s blocktime	transfer	64144		0	0.00%	4673.82		3086	5800	4763.00		4808.95		4909.99		210.52		361.29		26.52
 6. 	Quorum 1s blocktime	transfer	65126		0	0.00%	4584.52		1540	5719	4729.00		4766.00		4902.99		213.78		366.87		26.93
 ```
+
+#### Conclusion
+
+During run 6, Quorum had a difference in responses per second of ((218-214)/214x100 = ) ~1.87% and an average throughput (for runs 4 to 6) of ~214 responses per second.
+
+### Conclusion
+
+To aid in comparing the performance between Hyperledger Besu and Quorum, we have created two similar blockchain networks, one for Besu and one for Quorum. Included in this work are instructions on how to run the networks and test against them. Next, some test runs were done against Besu and Quorum and their results recorded. The Besu team recently (from version 1.4.4) included a flag which significantly closes the gap between Besu and Quorum. With the `secp256k1-native-enabled` flag enabled, Besu had a difference between lowest and highest responses per second (in a single run) of ~5% (previously ~38.59%), compared to Quorum's ~1.87% and Besu's average performance over 3 runs was ~201 responses per second (previously ~145), compared to Quorum's ~214 responses per second.   
 
 
 ### TODOs
