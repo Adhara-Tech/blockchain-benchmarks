@@ -1,0 +1,19 @@
+version: '3'
+services:
+  ethsigner:
+    image: pegasyseng/ethsigner:0.7.2-SNAPSHOT
+    network_mode: "host"
+    command:
+      - --chain-id=44844
+      - --downstream-http-host=localhost
+      - --downstream-http-port=8545
+      - --http-listen-port=9545
+      - --http-listen-host=0.0.0.0
+      - --downstream-http-request-timeout=150000
+      - --logging=INFO
+      - multikey-signer
+      - --directory=/keys-and-passwords
+    volumes:
+      - "../keysAndPasswords:/keys-and-passwords"
+    ports:
+      - "9545:9545"

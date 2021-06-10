@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@truffle/contract": "^4.1.12",
+    "@truffle/contract": "^4.2.21",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "uuid": "^7.0.2",
     "web3": "^1.2.6"
   },
