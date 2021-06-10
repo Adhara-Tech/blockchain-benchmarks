@@ -47,6 +47,6 @@
     "eslint-plugin-node": "5.1.0",
     "eslint-plugin-react": "7.5.1",
     "solhint": "^2.3.0",
-    "solidity-coverage": "^0.7.1"
+    "solidity-coverage": "^0.7.16"
   }
 }
